@@ -1,4 +1,4 @@
-DATE : 20090101-20180101
+DATE : 20090101-20180101</B> <br/>
 策略績效 :
 RETURNS
 429.69%</B> <br/>
@@ -30,13 +30,13 @@ def rebalance(context, data):
         
         current_price = data.current(stock, 'price') 
          
-        if data.can_trade(stock):
-
-             if current_price > (1.01*average_price):
+        if data.can_trade(stock):
+#買入:目前價>1.01均價
+             if current_price > (1.01*average_price):
                  order_target_percent(stock, 1)
-                 log.info("Buying %s" % (stock.symbol))
-
-             elif current_price < (1.07*average_price):
+                 log.info("Buying %s" % (stock.symbol))
+#賣出:目前價<1.07均價
+             elif current_price < (1.07*average_price):
                  order_target_percent(stock, 0)
                  log.info("Selling %s" % (stock.symbol))
         record(current_price=current_price, average_price=average_price)
