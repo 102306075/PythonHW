@@ -13,10 +13,8 @@ SHARPE
 DRAWDOWN
 -39.26%
 
-# In our example, we're looking at Apple.  If you re-type 
-    # this line you'll see [the auto-complete popup after `sid(`.
-    # Specify that we want the 'rebalance' method to run once a day
-    
+code
+
 def initialize(context):
     #IBM GOOG AAPL
     context.securities = [sid(3766),sid(46631),sid(24)]
